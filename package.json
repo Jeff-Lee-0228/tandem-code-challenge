@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run start-server & npm run build-watch",
-    "start-server": "nodemon --watch server -e js,html server/main.js",
+    "start-server": "nodemon --watch server -e js,html server/index.js",
     "build-watch": "webpack -w"
   },
   "author": "Jeff Lee",
@@ -13,8 +13,8 @@
   "dependencies": {
     "axios": "^0.20.0",
     "express": "^4.16.2",
+    "prettier": "^2.1.2",
     "react": "^16.13.1",
-    "react-chartjs-2": "^2.10.0",
     "react-dom": "^16.13.1",
     "react-router-dom": "^4.2.2"
   },
@@ -25,6 +25,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "json-loader": "^0.5.7",
     "nodemon": "^1.14.11",
     "webpack": "^3.10.0"
   }
