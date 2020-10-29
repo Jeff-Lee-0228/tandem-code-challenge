@@ -1,0 +1,32 @@
+body {
+  width: 100%;
+}
+
+#main {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+}
+
+.card {
+  width: 100%;
+}
+
+.landing-page-image {
+  align-self: center;
+  width: 50%;
+}
+
+.begin-button {
+  color: white;
+}
+
+.begin-button:hover {
+  color: white;
+  text-decoration: none;
+}
