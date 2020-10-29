@@ -4,7 +4,7 @@ export default class LandingPage extends Component {
   render() {
     return (
       <div>
-        <h2> Landing Page!</h2>
+        <h2>Welcome to Code Challenge</h2>
       </div>
     );
   }
