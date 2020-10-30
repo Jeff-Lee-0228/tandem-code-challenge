@@ -12,7 +12,7 @@ export default class LandingPage extends Component {
           <Card.Img
             className="landing-page-image"
             variant="top"
-            src={'http://cdn.onlinewebfonts.com/svg/img_238906.png'}
+            src="http://cdn.onlinewebfonts.com/svg/img_238906.png"
           />
           <Card.Body>
             <Card.Title>Welcome to Tandem Trivia</Card.Title>

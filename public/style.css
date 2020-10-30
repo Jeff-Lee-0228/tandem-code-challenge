@@ -14,7 +14,7 @@ body {
 }
 
 .card {
-  width: 100%;
+  width: 90%;
 }
 
 .landing-page-image {
@@ -29,4 +29,9 @@ body {
 .begin-button:hover {
   color: white;
   text-decoration: none;
+}
+
+.button {
+  float: right;
+  margin: 1.5%;
 }
