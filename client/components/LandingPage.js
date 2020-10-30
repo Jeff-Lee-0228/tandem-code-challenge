@@ -23,7 +23,7 @@ export default class LandingPage extends Component {
               smart you are!
             </Card.Text>
             <Button variant="primary">
-              <Link className="begin-button" to="/first">
+              <Link className="begin-button" to="/round">
                 Let's get started!
               </Link>
             </Button>
