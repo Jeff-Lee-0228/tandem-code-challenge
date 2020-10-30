@@ -9,10 +9,7 @@ import { connect } from 'react-redux';
 
 class Score extends Component {
   render() {
-    const submittedAnswer = {
-      ...this.props.firstRound,
-      ...this.props.secondRound,
-    };
+    const submittedAnswer = this.props.submitRound;
     const correctAnswers = data.map((el) => el.correct);
     const finalScore = grades(submittedAnswer, correctAnswers);
     return (
@@ -27,32 +24,26 @@ class Score extends Component {
           <Card.Body key="score">
             <Card.Title>
               {' '}
-              <b>Your score is : {finalScore} / 20</b>{' '}
+              <b>Your score is : {finalScore} / 10</b>{' '}
             </Card.Title>
             {(() => {
               switch (finalScore) {
-                case 10 < finalScore <= 15:
+                case 6 - 9:
                   return (
                     <Card.Text>
-                      <div>
-                        <b>Almost there.</b>
-                      </div>
+                      <b>Almost there.</b>
                     </Card.Text>
                   );
-                case 15 < finalScore:
+                case 10:
                   return (
                     <Card.Text>
-                      <div>
-                        <b>Congratulations. You are very smart!</b>
-                      </div>
+                      <b>Congratulations. You are very smart!</b>
                     </Card.Text>
                   );
                 default:
                   return (
                     <Card.Text>
-                      <div>
-                        <b>Why don't you play again?</b>
-                      </div>
+                      <b>Why don't you play again?</b>
                     </Card.Text>
                   );
               }
@@ -71,8 +62,7 @@ class Score extends Component {
 
 const mapState = (state) => {
   return {
-    firstRound: state.firstRound,
-    secondRound: state.secondRound,
+    submitRound: state.submitRound,
   };
 };
 

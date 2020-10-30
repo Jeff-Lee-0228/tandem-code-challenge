@@ -1,11 +1,10 @@
 import { withRouter, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
-import FirstRound from './components/FirstRound';
 import LandingPage from './components/LandingPage';
-import SecondRound from './components/SecondRound';
 import Score from './components/Score';
 import NoneFound from './components/NoneFound';
+import Round from './components/Round';
 
 class Main extends Component {
   render() {
@@ -13,8 +12,7 @@ class Main extends Component {
       <div id="main">
         <Switch>
           <Route exact path="/" component={LandingPage} />
-          <Route path="/first" component={FirstRound} />
-          <Route path="/second" component={SecondRound} />
+          <Route path="/round" component={Round} />
           <Route path="/score" component={Score} />
           <Route component={NoneFound} />
         </Switch>
@@ -25,8 +23,7 @@ class Main extends Component {
 
 const mapState = (state) => {
   return {
-    firstRound: state.firstRound,
-    secondRound: state.secondRound,
+    submitRound: state.submitRound,
   };
 };
 

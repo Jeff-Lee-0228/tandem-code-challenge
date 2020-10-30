@@ -2,12 +2,10 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { createLogger } from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import firstRound from './firstRound';
-import secondRound from './secondRound';
+import submitRound from './submitRound';
 
 const reducer = combineReducers({
-  firstRound,
-  secondRound,
+  submitRound,
 });
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({ collapsed: true }))
@@ -15,5 +13,4 @@ const middleware = composeWithDevTools(
 const store = createStore(reducer, middleware);
 
 export default store;
-export * from './firstRound';
-export * from './secondRound';
+export * from './submitRound';
