@@ -35,3 +35,13 @@ body {
   float: right;
   margin: 1.5%;
 }
+
+.button-home {
+  align-self: center;
+  margin: 1.5%;
+}
+
+.score-image {
+  width: 50%;
+  align-self: center;
+}
