@@ -1,4 +1,5 @@
-import { Route, Switch } from 'react-router-dom';
+import { withRouter, Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import FirstRound from './components/FirstRound';
 import LandingPage from './components/LandingPage';
@@ -6,7 +7,7 @@ import SecondRound from './components/SecondRound';
 import Score from './components/Score';
 import NoneFound from './components/NoneFound';
 
-export default class Main extends Component {
+class Main extends Component {
   render() {
     return (
       <div id="main">
@@ -21,3 +22,5 @@ export default class Main extends Component {
     );
   }
 }
+
+export default withRouter(connect(null, null)(Main));
