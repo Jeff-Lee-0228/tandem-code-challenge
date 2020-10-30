@@ -44,8 +44,6 @@ class Round extends Component {
 
   render() {
     const round = this.state.questions;
-    console.log('round--->', round);
-    console.log('this.state', this.state);
     return !this.state.questions ? (
       <h1>Loading...</h1>
     ) : (
