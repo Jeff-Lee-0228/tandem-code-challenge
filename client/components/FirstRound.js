@@ -5,8 +5,10 @@ import Container from 'react-bootstrap/Container';
 import data from '../../server/db/data.json';
 import { Link } from 'react-router-dom';
 import shuffle from './Shuffle';
+import { connect } from 'react-redux';
+import { submitFirstRound } from '../store';
 
-export default class FirstRound extends Component {
+class FirstRound extends Component {
   constructor() {
     super();
     this.state = { answer: {} };
@@ -27,8 +29,9 @@ export default class FirstRound extends Component {
 
   handleClick(evt) {
     evt.preventDefault();
-    console.log(this.state.answer);
+    this.props.submitFirstRound(this.state.answer);
   }
+
   handleChange(evt) {
     const key = evt.target.name;
     const value = evt.target.value;
@@ -83,3 +86,17 @@ export default class FirstRound extends Component {
     );
   }
 }
+
+const mapState = (state) => {
+  return {
+    answer: state.firstRound,
+  };
+};
+
+const mapDispatch = (dispatch) => {
+  return {
+    submitFirstRound: (answer) => dispatch(submitFirstRound(answer)),
+  };
+};
+
+export default connect(mapState, mapDispatch)(FirstRound);

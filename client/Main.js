@@ -23,4 +23,11 @@ class Main extends Component {
   }
 }
 
-export default withRouter(connect(null, null)(Main));
+const mapState = (state) => {
+  return {
+    firstRound: state.firstRound,
+    secondRound: state.secondRound,
+  };
+};
+
+export default withRouter(connect(mapState, null)(Main));
