@@ -30,4 +30,4 @@ const mapState = (state) => {
   };
 };
 
-export default withRouter(connect(mapState, null)(Main));
+export default withRouter(connect(mapState)(Main));
