@@ -1,3 +1,4 @@
+/* eslint-disable react/no-access-state-in-setstate */
 import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
@@ -44,8 +45,6 @@ class Round extends Component {
 
   render() {
     const round = this.state.questions;
-    console.log('round--->', round);
-    console.log('this.state', this.state);
     return !this.state.questions ? (
       <h1>Loading...</h1>
     ) : (
