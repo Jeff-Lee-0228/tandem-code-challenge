@@ -2,9 +2,12 @@
   "name": "tandem-code-challenge",
   "version": "1.0.0",
   "description": "this is tandem code challenge for apprenticeship application",
+  "engines": {
+    "node": "~12.11.1"
+  },
   "main": "index.js",
   "scripts": {
-    "build-client": "webpack -p",
+    "build-client": "webpack",
     "build-client-watch": "webpack -w",
     "deploy": "script/deploy",
     "heroku-token": "script/encrypt-heroku-auth-token.js",
