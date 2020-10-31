@@ -30,7 +30,7 @@ JSON file.
 - npm run start
 
 ## Deployment
-
+- https://tandem-code-challenge-jeff-lee.herokuapp.com/
 
 ## STRETCH GOALS
 - implement CRUD application integrating database and express API
