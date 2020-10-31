@@ -23,16 +23,18 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 // This allows for proper 404s instead of the wildcard '#<{(|' catching
 // URLs that bypass express.static because the given file does not exist.
 app.use((req, res, next) => {
-  if (path.extname(req.path).length > 0) {
-    res.status(404).end();
+  if (path.extname(req.path).length) {
+    const err = new Error('Not found');
+    err.status = 404;
+    next(err);
   } else {
     next();
   }
 });
 
-// Sends our index.html (the "single page" of our SPA)
-app.get('*', (req, res, next) => {
-  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+// sends index.html
+app.use('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'public/index.html'));
 });
 
 // Error catching endware
