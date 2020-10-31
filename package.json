@@ -7,7 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "build-client": "webpack -p",
+    "build-client": "webpack",
     "build-client-watch": "webpack -w",
     "deploy": "script/deploy",
     "heroku-token": "script/encrypt-heroku-auth-token.js",
@@ -24,15 +24,20 @@
   },
   "author": "Jeff Lee",
   "license": "ISC",
-  "babel": {
-    "presets": [
-      "babel-preset-fsa"
-    ]
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
-  "mocha": {
-    "require": [
-      "@babel/register",
-      "jsdom-global/register"
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier --write",
+      "npm run lint-fix",
+      "git add"
+    ],
+    "*.{css,scss,json,md}": [
+      "prettier --write",
+      "git add"
     ]
   },
   "dependencies": {
