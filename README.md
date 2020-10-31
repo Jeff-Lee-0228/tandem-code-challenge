@@ -27,7 +27,7 @@ JSON file.
 ## How to Run
 - git clone github.com/Jeff-Lee-0228/tandem-code-challenge
 - npm install
-- npm run start
+- npm run start-dev
 
 ## Deployment
 - https://tandem-code-challenge-jeff-lee.herokuapp.com/
