@@ -2,7 +2,10 @@ const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
   mode: isDev ? 'development' : 'production',
-  entry: ['core-js/stable', 'regenerator-runtime/runtime', './client/index.js'],
+  entry: [
+    '@babel/polyfill', // enables async-await
+    './client/index.js',
+  ],
   output: {
     path: __dirname,
     filename: './public/bundle.js',
@@ -15,11 +18,15 @@ module.exports = {
     ignored: /node_modules/,
   },
   module: {
-    loaders: [
+    rules: [
       {
-        test: /jsx?$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
