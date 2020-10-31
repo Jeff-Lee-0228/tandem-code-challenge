@@ -6,13 +6,20 @@
   "scripts": {
     "start": "npm run start-server & npm run build-watch",
     "start-server": "nodemon --watch server -e js,html server/index.js",
-    "build-watch": "webpack -w"
+    "build-watch": "webpack -w",
+    "test": "NODE_ENV='test' mocha -w \"./client/**/*.spec.js\"  --require @babel/polyfill --require @babel/register"
   },
   "author": "Jeff Lee",
   "license": "ISC",
   "babel": {
     "presets": [
       "babel-preset-fsa"
+    ]
+  },
+  "mocha": {
+    "require": [
+      "@babel/register",
+      "jsdom-global/register"
     ]
   },
   "dependencies": {
@@ -34,6 +41,8 @@
     "mocha": "^6.2.0",
     "nodemon": "^1.19.1",
     "pgtools": "^0.3.0",
+    "jsdom": "16.4.0",
+    "jsdom-global": "3.0.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-redux": "^7.1.1",
@@ -41,6 +50,8 @@
     "redux": "^4.0.4",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
+    "redux-immutable-state-invariant": "^2.1.0",
+    "redux-mock-store": "^1.5.4",
     "regenerator-runtime": "^0.13.3",
     "supertest": "^4.0.2",
     "webpack": "^3.10.0"
