@@ -18,10 +18,22 @@ JSON file.
 
 
 ## Explanation of Dependencies
+- bootstrap / react-bootstrap: for styling react component
+- prettier : formatting tool utilized for better readability
+- chai / enzyme / mocha : used for unit test
+- react / redux : fundamental structure implemented for building REST api
+- webpack / babel : module bundler that compiled Javascript files into one
 
-## HOW TO RUN
+## How to Run
+- git clone github.com/Jeff-Lee-0228/tandem-code-challenge
+- npm install
+- npm run start
 
 ## Deployment
 
-## STRETCH GOALS
 
+## STRETCH GOALS
+- implement CRUD application integrating database and express API
+- add user page for user's score history via Google O'Auth
+- add timer to each question for more dynamic user experience
+- write through unit test and automation test script
